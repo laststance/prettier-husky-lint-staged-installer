@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+coverage
+
+dist
+build
+.next
+
+.gitignore
+.git
+.vscode
+.idea
+
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lockb

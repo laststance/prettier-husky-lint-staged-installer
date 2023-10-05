@@ -1,0 +1,42 @@
+{
+  "name": "prettier-husky-lint-staged-installer",
+  "version": "0.1.0",
+  "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laststance/prettier-husky-lint-staged-installer"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^0.7.0",
+    "all-contributors-cli": "^6.26.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  },
+  "files": [
+    "bin",
+    "package.json",
+    "pnpm-lock.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "bin": "./bin/cli.mjs",
+  "bugs": {
+    "url": "https://github.com/laststance/eslint-config-ts-prefixer/issues"
+  },
+  "description": "prettier-husky-lint-staged-installer",
+  "homepage": "https://github.com/laststance/eslint-config-ts-prefixer",
+  "license": "MIT",
+  "scripts": {
+    "release": "release-it",
+    "prepare": "husky install",
+    "prettier": "prettier --ignore-unknown --write ."
+  },
+  "type": "module",
+  "volta": {
+    "node": "18.17.1"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  }
+}
