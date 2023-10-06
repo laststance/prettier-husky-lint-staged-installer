@@ -8,18 +8,28 @@ import { $ } from 'execa'
 const p = spinner()
 intro('Installing via husky, prettier, lint-staged...')
 p.start()
+
+let precommitExec
 if (existsSync('package-lock.json')) {
-  await $`npx husky-init && npm install && npm install --save-dev lint-staged prettier`
+  precommitExec = 'npm lint-staged'
+  await $`npm install --save-dev lint-staged prettier`
+  await $`npx husky-init && npm install`
 }
 if (existsSync('yarn.lock')) {
-  await $`yarn dlx husky-init --yarn2 && yarn && yarn add --dev lint-staged prettier`
+  precommitExec = 'yarn lint-staged'
+  await $`yarn add -D lint-staged prettier`
+  await $`yarn dlx husky-init --yarn2`
 } else if (existsSync('pnpm-lock.yaml')) {
-  await $`pnpm dlx husky-init && pnpm install && pnpm install --save-dev lint-staged prettier`
+  precommitExec = 'npm lint-staged'
+  await $`pnpm install --save-dev lint-staged prettier`
+  await $`pnpm dlx husky-init && pnpm install`
 } else if (existsSync('bun.lockb')) {
+  precommitExec = 'npm lint-staged'
+  await $`bun install -D lint-staged prettier`
   await $`bunx husky-init && bun install`
 } else {
   // fallback to npm
-
+  precommitExec = 'npm lint-staged'
   await $`npx husky-init && npm install && npm install --save-dev lint-staged prettier`
 }
 p.stop()
@@ -30,8 +40,7 @@ execSync('npm pkg set scripts.prettier="prettier --ignore-unknown --write ."')
 const path = '.husky/pre-commit'
 readFile(path, 'utf8', (err, data) => {
   if (err) throw err
-
-  const result = data.replace(/npm test/g, 'npx lint-staged')
+  const result = data.replace(/npm test/g, precommitExec)
 
   writeFile(path, result, 'utf8', (err) => {
     if (err) throw err
