@@ -11,7 +11,7 @@ p.start()
 
 let precommitExec
 if (existsSync('package-lock.json')) {
-  precommitExec = 'npm lint-staged'
+  precommitExec = 'npx lint-staged'
   await $`npm install --save-dev lint-staged prettier`
   await $`npx husky-init && npm install`
   await $`npm install` // to refrect package.json
@@ -32,7 +32,7 @@ if (existsSync('package-lock.json')) {
   await $`bun install` // to refrect package.json
 } else {
   // fallback to npm
-  precommitExec = 'npm lint-staged'
+  precommitExec = 'npxlint-staged'
   await $`npx husky-init && npm install && npm install --save-dev lint-staged prettier`
   await $`npm install` // to refrect package.json
 }
