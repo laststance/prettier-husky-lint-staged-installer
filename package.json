@@ -41,7 +41,7 @@
   },
   "type": "module",
   "volta": {
-    "node": "18.17.1"
+    "node": "18.18.2"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
