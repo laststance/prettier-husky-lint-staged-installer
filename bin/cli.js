@@ -45,6 +45,7 @@ execSync('npm pkg set scripts.prettier="prettier --ignore-unknown --write ."')
 const path = '.husky/pre-commit'
 readFile(path, 'utf8', (err, data) => {
   if (err) throw err
+  // "npm test" written in .husky/pre-commit by default. So replace it to npx|pnpm|yarn|bun lint-staged
   const result = data.replace(/npm test/g, precommitExec)
 
   writeFile(path, result, 'utf8', (err) => {
