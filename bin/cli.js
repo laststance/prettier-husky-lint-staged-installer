@@ -2,6 +2,7 @@
 
 import { execSync } from 'node:child_process'
 import { existsSync, readFile, writeFile } from 'node:fs'
+
 import { intro, outro, spinner } from '@clack/prompts'
 import { $ } from 'execa'
 
