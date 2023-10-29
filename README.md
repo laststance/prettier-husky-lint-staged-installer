@@ -1,4 +1,4 @@
-## prettier-husky-lint-staged-installer 　[![npm](https://img.shields.io/npm/dt/prettier-husky-lint-staged-installer].svg)](https://www.npmjs.com/package/prettier-husky-lint-staged-installer])
+## prettier-husky-lint-staged-installer
 
 
 Setup prettier fortmat staged files at precommit.  
