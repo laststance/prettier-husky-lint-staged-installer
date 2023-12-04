@@ -27,7 +27,7 @@ devDependencies:
     version: 8.54.0
   eslint-config-ts-prefixer:
     specifier: ^1.12.4
-    version: 1.12.5(@typescript-eslint/eslint-plugin@6.13.0)(@typescript-eslint/parser@6.13.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.0)(eslint-plugin-prettier@5.0.1)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
+    version: 1.12.6(@typescript-eslint/eslint-plugin@6.13.0)(@typescript-eslint/parser@6.13.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.0)(eslint-plugin-prettier@5.0.1)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
   eslint-import-resolver-typescript:
     specifier: ^3.6.1
     version: 3.6.1(@typescript-eslint/parser@6.13.1)(eslint-plugin-import@2.29.0)(eslint@8.54.0)
@@ -291,11 +291,6 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
-    dev: true
-
-  /@ljharb/through@2.3.9:
-    resolution: {integrity: sha512-yN599ZBuMPPK4tdoToLlvgJB4CLK8fGl7ntfy0Wn7U6ttNvHYurd81bfUiK/6sMkiIwm65R6ck4L6+Y3DfVbNQ==}
-    engines: {node: '>= 0.4'}
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
@@ -1496,8 +1491,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-ts-prefixer@1.12.5(@typescript-eslint/eslint-plugin@6.13.0)(@typescript-eslint/parser@6.13.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.0)(eslint-plugin-prettier@5.0.1)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-YjDXyVm4Dn58z1BEwqq7WTvxPvckkJYk/4rndcG9Nn4TpqEWQ2hH5ma9jY484Kn3N4tqzh3DVajTY81SfzrXmg==}
+  /eslint-config-ts-prefixer@1.12.6(@typescript-eslint/eslint-plugin@6.13.0)(@typescript-eslint/parser@6.13.1)(eslint-import-resolver-typescript@3.6.1)(eslint-plugin-import@2.29.0)(eslint-plugin-prettier@5.0.1)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-g2xkwsRRUzAr1LlTcYI775rV+z2iQ1jeH45UEeCLU4YqgoOEU39QHA4mnbr27pQKQZoE02SmNXbTAFDezfjsew==}
     hasBin: true
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.9.1
@@ -1517,7 +1512,7 @@ packages:
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.13.1)(eslint-plugin-import@2.29.0)(eslint@8.54.0)
       eslint-plugin-import: 2.29.0(@typescript-eslint/parser@6.13.1)(eslint-import-resolver-typescript@3.6.1)(eslint@8.54.0)
       eslint-plugin-prettier: 5.0.1(eslint@8.54.0)(prettier@3.1.0)
-      inquirer: 9.2.11
+      inquirer: 9.2.12
       prettier: 3.1.0
       typescript: 5.3.2
     dev: true
@@ -2311,27 +2306,6 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
-    dev: true
-
-  /inquirer@9.2.11:
-    resolution: {integrity: sha512-B2LafrnnhbRzCWfAdOXisUzL89Kg8cVJlYmhqoi3flSiV/TveO+nsXwgKr9h9PIo+J1hz7nBSk6gegRIMBBf7g==}
-    engines: {node: '>=14.18.0'}
-    dependencies:
-      '@ljharb/through': 2.3.9
-      ansi-escapes: 4.3.2
-      chalk: 5.3.0
-      cli-cursor: 3.1.0
-      cli-width: 4.1.0
-      external-editor: 3.1.0
-      figures: 5.0.0
-      lodash: 4.17.21
-      mute-stream: 1.0.0
-      ora: 5.4.1
-      run-async: 3.0.0
-      rxjs: 7.8.1
-      string-width: 4.2.3
-      strip-ansi: 6.0.1
-      wrap-ansi: 6.2.0
     dev: true
 
   /inquirer@9.2.12:
