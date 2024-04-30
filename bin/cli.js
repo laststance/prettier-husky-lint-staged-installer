@@ -14,28 +14,22 @@ let precommitExec
 if (existsSync('package-lock.json')) {
   precommitExec = 'npx lint-staged'
   await $`npm install --save-dev lint-staged prettier`
-  await $`npx husky-init && npm install`
+  await $`npx husky init`
   await $`npm install` // to refrect package.json
-} else if (existsSync('yarn.lock')) {
-  precommitExec = 'yarn lint-staged'
-  await $`yarn add -D lint-staged prettier`
-  await $`yarn dlx husky-init --yarn2`
-  await $`yarn install` // to refrect package.json
 } else if (existsSync('pnpm-lock.yaml')) {
   precommitExec = 'pnpm lint-staged'
   await $`pnpm install --save-dev lint-staged prettier`
-  await $`pnpm dlx husky-init && pnpm install`
+  await $`pnpm exec husky init`
   await $`pnpm install` // to refrect package.json
 } else if (existsSync('bun.lockb')) {
-  precommitExec = 'npx lint-staged'
+  precommitExec = 'bunx lint-staged'
   await $`bun install -D lint-staged prettier`
-  await $`bunx husky-init && bun install`
+  await $`bunx husky init`
   await $`bun install` // to refrect package.json
 } else {
-  // fallback to npm
-  precommitExec = 'npx lint-staged'
-  await $`npx husky-init && npm install && npm install --save-dev lint-staged prettier`
-  await $`npm install` // to refrect package.json
+  p.stop()
+  p.message('This project only support npm/pnpm/bun project.')
+  outro('Finished.')
 }
 p.stop()
 intro('Configration...')
@@ -46,7 +40,7 @@ execSync('npm pkg set scripts.prettier="prettier --ignore-unknown --write ."')
 const path = '.husky/pre-commit'
 readFile(path, 'utf8', (err, data) => {
   if (err) throw err
-  // "npm test" written in .husky/pre-commit by default. So replace it to npx|pnpm|yarn|bun lint-staged
+  // "npm test" written in .husky/pre-commit by default. So replace it to npx|pnpm|bun lint-staged
   const result = data.replace(/npm test/g, precommitExec)
 
   writeFile(path, result, 'utf8', (err) => {
