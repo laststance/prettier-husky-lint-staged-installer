@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "execa": "^8.0.1"
+    "execa": "^9.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.0",
