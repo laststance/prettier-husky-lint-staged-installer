@@ -10,7 +10,7 @@ dependencies:
     version: 0.7.0
   execa:
     specifier: ^9.0.0
-    version: 9.0.0
+    version: 9.0.2
 
 devDependencies:
   '@typescript-eslint/eslint-plugin':
@@ -1792,8 +1792,8 @@ packages:
       strip-final-newline: 3.0.0
     dev: true
 
-  /execa@9.0.0:
-    resolution: {integrity: sha512-YqlYPdTp6UMdt0WEM8QKeBR8ORtgxWP7ZB5NB9AMlfGWg32Fg48j6uZdKfhG2o6cNJBIRPF0Ok93R0vY37oBWQ==}
+  /execa@9.0.2:
+    resolution: {integrity: sha512-oO281GF7ksH/Ogv1xyDf1prvFta/6/XkGKxRUvA3IB2MU1rCJGlFs86HRZhdooow1ISkR0Np0rOxUCIJVw36Rg==}
     engines: {node: '>=18'}
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
