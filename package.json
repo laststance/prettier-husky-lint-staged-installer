@@ -36,10 +36,10 @@
   ],
   "bin": "./bin/cli.js",
   "bugs": {
-    "url": "https://github.com/laststance/eslint-config-ts-prefixer/issues"
+    "url": "https://github.com/laststance/prettier-husky-lint-staged-installer/issues"
   },
   "description": "prettier-husky-lint-staged-installer",
-  "homepage": "https://github.com/laststance/eslint-config-ts-prefixer",
+  "homepage": "https://github.com/laststance/prettier-husky-lint-staged-installer",
   "license": "MIT",
   "scripts": {
     "release": "release-it",
