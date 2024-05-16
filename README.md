@@ -28,10 +28,7 @@ npx prettier-husky-lint-staged-installer
 ```shell
 pnpm dlx prettier-husky-lint-staged-installer
 ```
-- yarn
-```shell
-npx prettier-husky-lint-staged-installer
-```
+
 - bun
 ```shell
 bunx prettier-husky-lint-staged-installer
