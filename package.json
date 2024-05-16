@@ -1,6 +1,7 @@
 {
   "name": "prettier-husky-lint-staged-installer",
   "version": "1.1.0",
+  "type": "module",
   "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
   "repository": {
     "type": "git",
@@ -47,9 +48,8 @@
     "lint": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs --fix"
   },
-  "type": "module",
   "volta": {
-    "node": "18.18.2"
+    "node": "22.2.0"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
