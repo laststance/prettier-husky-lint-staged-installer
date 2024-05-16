@@ -1,6 +1,6 @@
 {
   "name": "prettier-husky-lint-staged-installer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
   "repository": {
