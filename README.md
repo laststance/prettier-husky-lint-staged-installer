@@ -13,9 +13,6 @@ run prettier staged file when you git commit.
 ```
 - `.huskey/precommit`
 ```shell
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 npx lint-staged
 ```
 
