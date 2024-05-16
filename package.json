@@ -43,7 +43,7 @@
   "license": "MIT",
   "scripts": {
     "release": "release-it",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --ignore-unknown --write .",
     "lint": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs --fix"
