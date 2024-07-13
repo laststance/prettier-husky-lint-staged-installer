@@ -1,3 +1,5 @@
+[![Prettier](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/prettier.yml/badge.svg)](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/prettier.yml)
+[![Lint](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/lint.yml/badge.svg)](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/lint.yml)
 ## prettier-husky-lint-staged-installer
 
 
