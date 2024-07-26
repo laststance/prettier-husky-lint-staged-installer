@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { execSync } from 'node:child_process'
-import { existsSync, readFile, writeFile } from 'node:fs'
+import { existsSync, readFile, writeFile, copyFileSync } from 'node:fs'
 
 import { intro, outro, spinner } from '@clack/prompts'
 import { $ } from 'execa'
@@ -36,6 +36,10 @@ intro('Configration...')
 p.start()
 execSync('npm pkg set lint-staged.*="prettier --ignore-unknown --write"')
 execSync('npm pkg set scripts.prettier="prettier --ignore-unknown --write ."')
+// Copy .prettierignore to user's directory
+copyFileSync('.prettierignore', './.prettierignore')
+// Copy .prettierrc to user's directory
+copyFileSync('.prettierrc', './.prettierrc')
 // replace "npm test" to  in $precommitExec '.husky/pre-commit'
 const path = '.husky/pre-commit'
 readFile(path, 'utf8', (err, data) => {

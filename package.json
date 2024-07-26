@@ -32,7 +32,9 @@
     "pnpm-lock.json",
     "LICENSE",
     "README.md",
-    "node_modules"
+    "node_modules",
+    ".prettierrc",
+    ".prettierignore"
   ],
   "bin": "./bin/cli.js",
   "bugs": {

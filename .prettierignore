@@ -2,6 +2,7 @@
 node_modules
 coverage
 
+.husky
 dist
 build
 .next
