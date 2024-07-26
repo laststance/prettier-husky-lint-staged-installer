@@ -5,7 +5,7 @@
   "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/laststance/prettier-husky-lint-staged-installer"
+    "url": "git+https://github.com/laststance/prettier-husky-lint-staged-installer.git"
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
@@ -36,7 +36,9 @@
     ".prettierrc",
     ".prettierignore"
   ],
-  "bin": "./bin/cli.js",
+  "bin": {
+    "prettier-husky-lint-staged-installer": "bin/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/laststance/prettier-husky-lint-staged-installer/issues"
   },
