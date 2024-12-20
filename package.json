@@ -8,7 +8,7 @@
     "url": "git+https://github.com/laststance/prettier-husky-lint-staged-installer.git"
   },
   "dependencies": {
-    "@clack/prompts": "^0.8.1",
+    "@clack/prompts": "^0.9.0",
     "execa": "^9.0.0"
   },
   "devDependencies": {
