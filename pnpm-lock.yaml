@@ -29,7 +29,7 @@ importers:
         version: 8.57.1
       eslint-config-ts-prefixer:
         specifier: ^1.12.4
-        version: 1.14.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint-plugin-import@2.31.0)(eslint-plugin-prettier@5.2.1(eslint@8.57.1)(prettier@3.4.2))(eslint@8.57.1)(prettier@3.4.2)(typescript@5.7.3)
+        version: 1.14.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint-plugin-import@2.31.0)(eslint-plugin-prettier@5.2.2(eslint@8.57.1)(prettier@3.4.2))(eslint@8.57.1)(prettier@3.4.2)(typescript@5.7.3)
       eslint-import-resolver-typescript:
         specifier: ^3.6.1
         version: 3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
@@ -38,7 +38,7 @@ importers:
         version: 2.31.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
       eslint-plugin-prettier:
         specifier: ^5.0.1
-        version: 5.2.1(eslint@8.57.1)(prettier@3.4.2)
+        version: 5.2.2(eslint@8.57.1)(prettier@3.4.2)
       husky:
         specifier: ^9.0.5
         version: 9.1.7
@@ -903,8 +903,8 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-prettier@5.2.1:
-    resolution: {integrity: sha512-gH3iR3g4JfF+yYPaJYkN7jEl9QbweL/YfkoRlNnuIEHEz1vHVlCmWOS+eGGiRuzHQXdJFCOTxRgvju9b8VUmrw==}
+  eslint-plugin-prettier@5.2.2:
+    resolution: {integrity: sha512-1yI3/hf35wmlq66C8yOyrujQnel+v5l1Vop5Cl2I6ylyNTT1JbuUUnV3/41PzwTzcyDp/oF0jWE3HXvcH5AQOQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -3186,7 +3186,7 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
-  eslint-config-ts-prefixer@1.14.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint-plugin-import@2.31.0)(eslint-plugin-prettier@5.2.1(eslint@8.57.1)(prettier@3.4.2))(eslint@8.57.1)(prettier@3.4.2)(typescript@5.7.3):
+  eslint-config-ts-prefixer@1.14.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3))(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint-plugin-import@2.31.0)(eslint-plugin-prettier@5.2.2(eslint@8.57.1)(prettier@3.4.2))(eslint@8.57.1)(prettier@3.4.2)(typescript@5.7.3):
     dependencies:
       '@inquirer/prompts': 5.3.8
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)
@@ -3195,7 +3195,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.7.3))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
-      eslint-plugin-prettier: 5.2.1(eslint@8.57.1)(prettier@3.4.2)
+      eslint-plugin-prettier: 5.2.2(eslint@8.57.1)(prettier@3.4.2)
       inquirer: 10.1.8
       prettier: 3.4.2
       typescript: 5.7.3
@@ -3264,7 +3264,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-prettier@5.2.1(eslint@8.57.1)(prettier@3.4.2):
+  eslint-plugin-prettier@5.2.2(eslint@8.57.1)(prettier@3.4.2):
     dependencies:
       eslint: 8.57.1
       prettier: 3.4.2
