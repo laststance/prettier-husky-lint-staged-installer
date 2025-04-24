@@ -2,9 +2,17 @@
 
 import { execSync } from 'node:child_process'
 import { existsSync, readFile, writeFile, copyFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { intro, outro, spinner } from '@clack/prompts'
 import { $ } from 'execa'
+
+// Get the directory of the current module
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+// Path to the templates directory
+const TEMPLATES_DIR = join(__dirname, '..', 'templates')
 
 const p = spinner()
 intro('Installing via husky, prettier, lint-staged...')
@@ -37,9 +45,15 @@ p.start()
 execSync('npm pkg set lint-staged.*="prettier --ignore-unknown --write"')
 execSync('npm pkg set scripts.prettier="prettier --ignore-unknown --write ."')
 // Copy .prettierignore to user's directory
-copyFileSync('.prettierignore', './.prettierignore')
-// Copy .prettierrc to user's directory
-copyFileSync('.prettierrc', './.prettierrc')
+try {
+  copyFileSync(join(TEMPLATES_DIR, '.prettierignore'), './.prettierignore')
+  // Copy .prettierrc to user's directory
+  copyFileSync(join(TEMPLATES_DIR, '.prettierrc'), './.prettierrc')
+} catch (error) {
+  console.error('Error copying template files:', error.message)
+  // Continue execution even if template copy fails
+}
+
 // replace "npm test" to  in $precommitExec '.husky/pre-commit'
 const path = '.husky/pre-commit'
 readFile(path, 'utf8', (err, data) => {

@@ -21,6 +21,7 @@
     "./**.cjs",
     "./**.mjs",
     "bin",
+    "test",
     ".eslintrc.cjs",
     "tsup.config.ts",
     "vitest.config.ts"
