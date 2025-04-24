@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Contribution Guidelines
+
+This project welcomes contributions from the community. The contribution process is documented in:
+
+- [CONTRIBUTING.md](mdc:CONTRIBUTING.md) - General contribution guidelines
+- [CODE_OF_CONDUCT.md](mdc:CODE_OF_CONDUCT.md) - Community code of conduct
+
+## Development Workflow
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Ensure the code passes linting and formatting rules
+5. Create a pull request
+
+## Release Process
+
+The project uses [release-it](mdc:https:/github.com/release-it/release-it) for managing releases, configured in [.release-it.json](mdc:.release-it.json).
+
+Run `npm run release` to create a new release, which will:
+1. Bump the version
+2. Create a git tag
+3. Push to GitHub
+4. Publish to npm

@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Dependencies
+
+## Runtime Dependencies
+
+- **@clack/prompts** - Terminal UI library for user interactions
+- **execa** - Process execution library for running commands
+
+## DevDependencies
+
+- **eslint** with various plugins - For code linting
+- **prettier** - Code formatting
+- **husky** - Git hooks management
+- **lint-staged** - Run linters on staged files
+- **typescript** - Type checking
+
+The [package.json](mdc:package.json) file contains the complete list of dependencies.

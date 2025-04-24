@@ -1,0 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Installation Workflow
+
+The installer follows a specific workflow to set up the formatting tools:
+
+1. **Detection** - Checks which package manager is used (npm, pnpm, or bun) by looking for lock files
+2. **Installation** - Installs husky, lint-staged, and prettier as dev dependencies
+3. **Husky Setup** - Initializes husky
+4. **Configuration** - Sets up lint-staged in package.json
+5. **File Setup** - Copies .prettierrc and .prettierignore files
+6. **Hook Setup** - Configures the pre-commit hook to run lint-staged
+
+This process is handled in [bin/cli.js](mdc:bin/cli.js) with detailed steps for each package manager.

@@ -1,0 +1,21 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Overview
+
+The `prettier-husky-lint-staged-installer` is a CLI tool that automatically sets up Prettier, Husky, and lint-staged in a project to enable automatic code formatting on pre-commit.
+
+## Key Components
+
+- [bin/cli.js](mdc:bin/cli.js) - The main CLI entry point that performs the installation
+- [package.json](mdc:package.json) - Project configuration and dependencies
+
+## Main Features
+
+- Detects package manager (npm, pnpm, or bun) automatically
+- Installs Prettier, Husky, and lint-staged as dev dependencies
+- Sets up a pre-commit hook that runs Prettier on staged files
+- Configures lint-staged to run Prettier on all file types
+- Copies default Prettier configuration files to the project

@@ -1,0 +1,51 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Usage Examples
+
+The `prettier-husky-lint-staged-installer` can be run using different package managers.
+
+## Running with npx (npm)
+
+```bash
+npx prettier-husky-lint-staged-installer
+```
+
+## Running with pnpm
+
+```bash
+pnpm dlx prettier-husky-lint-staged-installer
+```
+
+## Running with bun
+
+```bash
+bunx prettier-husky-lint-staged-installer
+```
+
+## What Gets Installed
+
+After running the installer, your project will have:
+
+1. Husky, lint-staged, and Prettier installed as dev dependencies
+2. A pre-commit hook that runs Prettier on staged files
+3. A `.prettierrc` config file with sensible defaults
+4. A `.prettierignore` file
+5. Package.json scripts for running Prettier manually
+
+## Resulting Configuration
+
+The installer adds this to your package.json:
+
+```json
+"lint-staged": {
+  "*": "prettier --ignore-unknown --write"
+},
+"scripts": {
+  "prettier": "prettier --ignore-unknown --write ."
+}
+```
+
+And creates a pre-commit hook to run lint-staged.

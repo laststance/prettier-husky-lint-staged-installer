@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Coding Standards
+
+This project follows specific coding standards enforced by its own tools:
+
+## Prettier Configuration
+
+The project uses a standard Prettier configuration defined in [.prettierrc](mdc:.prettierrc):
+
+```json
+{
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all"
+}
+```
+
+## ESLint Configuration
+
+The project uses ESLint with TypeScript support as defined in [.eslintrc.cjs](mdc:.eslintrc.cjs).
+
+## Git Hooks
+
+The project uses Husky to manage Git hooks:
+- Pre-commit hook runs Prettier on staged files via lint-staged
+
+## Scripts
+
+Common development scripts are available in [package.json](mdc:package.json):
+- `npm run prettier` - Run Prettier on all files
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Run ESLint with auto-fix

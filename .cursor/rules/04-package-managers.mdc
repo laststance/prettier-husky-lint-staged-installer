@@ -1,0 +1,42 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Package Manager Handling
+
+The installer supports three package managers automatically:
+
+## Detection Logic
+
+The CLI detects which package manager is being used by checking for lock files:
+- `package-lock.json` → npm
+- `pnpm-lock.yaml` → pnpm 
+- `bun.lockb` → bun
+
+## Manager-Specific Commands
+
+Each package manager requires different commands:
+
+### npm
+```javascript
+precommitFileBody = 'npx lint-staged'
+await $`npm install --save-dev husky lint-staged prettier`
+await $`npx husky init`
+```
+
+### pnpm
+```javascript
+precommitFileBody = 'pnpm lint-staged'
+await $`pnpm install --save-dev husky lint-staged prettier`
+await $`pnpm exec husky init`
+```
+
+### bun
+```javascript
+precommitFileBody = 'bunx lint-staged'
+await $`bun install -D husky lint-staged prettier`
+await $`bunx husky init`
+```
+
+This detection and execution logic is implemented in [bin/cli.js](mdc:bin/cli.js).
