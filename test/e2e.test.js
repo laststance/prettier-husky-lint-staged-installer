@@ -1,4 +1,4 @@
-import { expect, describe, it, beforeEach, afterEach } from 'vitest'
+import { exec } from 'node:child_process'
 import {
   mkdir,
   mkdtemp,
@@ -7,10 +7,11 @@ import {
   existsSync,
   rm,
 } from 'node:fs/promises'
-import { exec } from 'node:child_process'
-import { join } from 'node:path'
 import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { promisify } from 'node:util'
+
+import { expect, describe, it, beforeEach, afterEach } from 'vitest'
 
 const execAsync = promisify(exec)
 

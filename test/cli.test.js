@@ -1,7 +1,8 @@
-import { expect, describe, it, vi, beforeEach, afterEach } from 'vitest'
 import { existsSync, copyFileSync, readFile } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+
+import { expect, describe, it, vi, beforeEach, afterEach } from 'vitest'
 
 // Mock dependencies
 vi.mock('node:fs', () => ({
@@ -16,7 +17,7 @@ vi.mock('node:child_process', () => ({
 }))
 
 vi.mock('execa', () => ({
-  $: vi.fn(() => Promise.resolve()),
+  $: vi.fn(async () => Promise.resolve()),
 }))
 
 vi.mock('@clack/prompts', () => ({
