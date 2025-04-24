@@ -24,10 +24,12 @@
     "lint-staged": "^15.0.1",
     "prettier": "^3.0.3",
     "release-it": "^19.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "^3.1.2"
   },
   "files": [
     "bin",
+    "templates",
     "package.json",
     "pnpm-lock.json",
     "LICENSE",
@@ -50,7 +52,8 @@
     "prepare": "husky",
     "prettier": "prettier --ignore-unknown --write .",
     "lint": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs",
-    "lint:fix": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs --fix"
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs --fix",
+    "test": "vitest run"
   },
   "volta": {
     "node": "20.16.0"
