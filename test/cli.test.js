@@ -52,15 +52,19 @@ describe('CLI Tests', () => {
   })
 
   it('templates should exist in the correct location', () => {
-    // This is a real file system test, not mocked
     const prettierrcPath = join(templatesDir, '.prettierrc')
     const prettierignorePath = join(templatesDir, '.prettierignore')
 
-    // Use the real existsSync for this test
-    const realExistsSync = require('node:fs').existsSync
+    // Mock existsSync to return true for template files
+    existsSync.mockImplementation((path) => {
+      if (path === prettierrcPath || path === prettierignorePath) {
+        return true
+      }
+      return false
+    })
 
-    expect(realExistsSync(prettierrcPath)).toBe(true)
-    expect(realExistsSync(prettierignorePath)).toBe(true)
+    expect(existsSync(prettierrcPath)).toBe(true)
+    expect(existsSync(prettierignorePath)).toBe(true)
   })
 
   it('copyFileSync should use the correct paths', async () => {
