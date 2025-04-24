@@ -53,11 +53,10 @@
     "prettier": "prettier --ignore-unknown --write .",
     "lint": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,jsx,cjs,mjs --fix",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test": "vitest run"
   },
   "volta": {
-    "node": "20.16.0"
+    "node": "20.19.1"
   },
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
