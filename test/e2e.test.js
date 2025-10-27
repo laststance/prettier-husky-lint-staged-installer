@@ -1,12 +1,6 @@
 import { exec } from 'node:child_process'
-import {
-  mkdir,
-  mkdtemp,
-  writeFile,
-  readFile,
-  existsSync,
-  rm,
-} from 'node:fs/promises'
+import { existsSync } from 'node:fs'
+import { mkdir, mkdtemp, writeFile, readFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { promisify } from 'node:util'

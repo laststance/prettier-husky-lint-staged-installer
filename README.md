@@ -1,19 +1,22 @@
 [![Prettier](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/prettier.yml/badge.svg)](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/prettier.yml)
 [![Lint](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/lint.yml/badge.svg)](https://github.com/laststance/prettier-husky-lint-staged-installer/actions/workflows/lint.yml)
-## prettier-husky-lint-staged-installer
 
+## prettier-husky-lint-staged-installer
 
 Setup prettier fortmat staged files at precommit.  
 After installation you'll got following setting automatically and
 run prettier staged file when you git commit.
 
 - `package.json`
+
 ```json
   "lint-staged": {
     "*": "prettier --ignore-unknown --write"
   }
 ```
+
 - `.huskey/precommit`
+
 ```shell
 npx lint-staged
 ```
@@ -23,15 +26,19 @@ npx lint-staged
 Run script at your project root directory.
 
 - npm
+
 ```shell
 npx prettier-husky-lint-staged-installer
 ```
+
 - pnpm
+
 ```shell
 pnpm dlx prettier-husky-lint-staged-installer
 ```
 
 - bun
+
 ```shell
 bunx prettier-husky-lint-staged-installer
 ```
