@@ -1,4 +1,5 @@
-import { existsSync, copyFileSync, readFile } from 'node:fs'
+import { existsSync, copyFileSync } from 'node:fs'
+import { readFile, writeFile } from 'node:fs/promises'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -8,6 +9,11 @@ import { expect, describe, it, vi, beforeEach, afterEach } from 'vitest'
 vi.mock('node:fs', () => ({
   existsSync: vi.fn(),
   copyFileSync: vi.fn(),
+  readFile: vi.fn(),
+  writeFile: vi.fn(),
+}))
+
+vi.mock('node:fs/promises', () => ({
   readFile: vi.fn(),
   writeFile: vi.fn(),
 }))
@@ -75,9 +81,8 @@ describe('CLI Tests', () => {
       return false
     })
 
-    readFile.mockImplementation((path, encoding, callback) => {
-      callback(null, 'test data')
-    })
+    readFile.mockResolvedValue('test data')
+    writeFile.mockResolvedValue()
 
     // Import the CLI module
     await import('../bin/cli.js')
