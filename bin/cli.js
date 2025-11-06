@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { execSync } from 'node:child_process'
-import { existsSync, readFile, writeFile, copyFileSync } from 'node:fs'
+import { existsSync, copyFileSync } from 'node:fs'
+import { readFile, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -38,6 +39,7 @@ if (existsSync('package-lock.json')) {
   p.stop()
   p.message('This project only support npm/pnpm/bun project.')
   outro('Finished.')
+  process.exit(0)
 }
 p.stop()
 intro('Configration...')
@@ -56,16 +58,13 @@ try {
 
 // replace "npm test" to  in $precommitExec '.husky/pre-commit'
 const path = '.husky/pre-commit'
-readFile(path, 'utf8', (err, data) => {
-  if (err) throw err
-
+try {
+  await readFile(path, 'utf8')
   // overwrite .husky/pre-commit
-  data = precommitFileBody
-
-  writeFile(path, data, 'utf8', (err) => {
-    if (err) throw err
-  })
-})
+  await writeFile(path, precommitFileBody, 'utf8')
+} catch (err) {
+  throw err
+}
 p.stop()
 
 outro("You're all set!🎉")
