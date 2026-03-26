@@ -1,6 +1,6 @@
 {
   "name": "prettier-husky-lint-staged-installer",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "type": "module",
   "author": "Ryota Murakami <dojce1048@gmail.com> (https://ryota-murakami.github.io/)",
   "repository": {
@@ -13,14 +13,14 @@
   },
   "devDependencies": {
     "all-contributors-cli": "^6.26.1",
-    "eslint": "^9.0.0",
-    "eslint-config-ts-prefixer": "^4.0.0",
-    "husky": "^9.0.5",
-    "lint-staged": "^16.0.0",
-    "prettier": "^3.0.3",
-    "release-it": "^19.0.1",
-    "typescript": "^5.2.2",
-    "vitest": "^4.0.1"
+    "eslint": "^9.39.2",
+    "eslint-config-ts-prefixer": "^4.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
+    "release-it": "^19.2.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.2"
   },
   "files": [
     "bin",
