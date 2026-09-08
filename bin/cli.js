@@ -9,6 +9,8 @@ import { fileURLToPath } from 'node:url'
 import { intro, outro, spinner } from '@clack/prompts'
 import { $ } from 'execa'
 
+import { getPnpmSaveDevInstallArgs } from './pnpm-workspace.js'
+
 // Get the directory of the current module
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -27,7 +29,7 @@ if (existsSync('package-lock.json')) {
   await $`npm install` // to refrect package.json
 } else if (existsSync('pnpm-lock.yaml')) {
   precommitFileBody = 'pnpm lint-staged'
-  await $`pnpm install --save-dev husky lint-staged prettier`
+  await $`pnpm ${getPnpmSaveDevInstallArgs()}`
   await $`pnpm exec husky init`
   await $`pnpm install` // to refrect package.json
 } else if (existsSync('bun.lockb')) {

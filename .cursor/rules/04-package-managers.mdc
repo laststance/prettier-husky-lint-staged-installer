@@ -28,9 +28,11 @@ await $`npx husky init`
 ### pnpm
 ```javascript
 precommitFileBody = 'pnpm lint-staged'
-await $`pnpm install --save-dev husky lint-staged prettier`
+await $`pnpm ${getPnpmSaveDevInstallArgs()}`
 await $`pnpm exec husky init`
 ```
+
+When `pnpm-workspace.yaml` exists, `pnpm install --save-dev` fails with `ERR_PNPM_ADDING_TO_ROOT` unless `-w` (`--workspace-root`) is passed. Do **not** pass `-w` on non-workspace projects (`--workspace-root may only be used inside a workspace`).
 
 ### bun
 ```javascript

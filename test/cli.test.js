@@ -41,6 +41,23 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const templatesDir = join(__dirname, '..', 'templates')
 
+function execaCommands($) {
+  return $.mock.calls.map((call) => {
+    const [strings, ...values] = call
+    if (!Array.isArray(strings)) {
+      return String(call)
+    }
+    return strings.reduce((acc, chunk, i) => {
+      if (i >= values.length) {
+        return acc + chunk
+      }
+      const value = values[i]
+      const rendered = Array.isArray(value) ? value.join(' ') : String(value)
+      return acc + chunk + rendered
+    }, '')
+  })
+}
+
 describe('CLI Tests', () => {
   beforeEach(() => {
     // Reset all mocks
@@ -74,8 +91,8 @@ describe('CLI Tests', () => {
   })
 
   it('copyFileSync should use the correct paths', async () => {
-    // We need to import the CLI module to test it
-    // But first setup necessary mocks
+    // Arrange
+    vi.resetModules()
     existsSync.mockImplementation((path) => {
       if (path === 'package-lock.json') return true
       return false
@@ -84,7 +101,7 @@ describe('CLI Tests', () => {
     readFile.mockResolvedValue('test data')
     writeFile.mockResolvedValue()
 
-    // Import the CLI module
+    // Act
     await import('../bin/cli.js')
 
     // Check that copyFileSync was called with the correct paths
@@ -116,5 +133,46 @@ describe('CLI Tests', () => {
 
     // The function should not throw and return true
     expect(copyWithErrorHandling()).toBe(true)
+  })
+
+  it('runs pnpm install -w --save-dev at a workspace root so ERR_PNPM_ADDING_TO_ROOT does not fire', async () => {
+    // Arrange
+    vi.resetModules()
+    existsSync.mockImplementation((path) => {
+      const p = String(path)
+      return p === 'pnpm-lock.yaml' || p.endsWith('pnpm-workspace.yaml')
+    })
+    readFile.mockResolvedValue('test data')
+    writeFile.mockResolvedValue()
+
+    // Act
+    await import('../bin/cli.js')
+    const { $ } = await import('execa')
+
+    // Assert
+    expect(execaCommands($)).toContain(
+      'pnpm install -w --save-dev husky lint-staged prettier',
+    )
+  })
+
+  it('omits -w on pnpm install --save-dev when pnpm-workspace.yaml is absent', async () => {
+    // Arrange
+    vi.resetModules()
+    existsSync.mockImplementation((path) => String(path) === 'pnpm-lock.yaml')
+    readFile.mockResolvedValue('test data')
+    writeFile.mockResolvedValue()
+
+    // Act
+    await import('../bin/cli.js')
+    const { $ } = await import('execa')
+
+    // Assert
+    const commands = execaCommands($)
+    expect(commands).toContain(
+      'pnpm install --save-dev husky lint-staged prettier',
+    )
+    expect(commands).not.toContain(
+      'pnpm install -w --save-dev husky lint-staged prettier',
+    )
   })
 })
